@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="empNamespace">
+	
+	<resultMap type="entity.Emp" id="empMap">
+		<id property="eid" column="eid"/>
+		<result property="ename" column="ename"/>
+		<result property="esal" column="esal"/>
+		<result property="esex" column="esex"/>
+	</resultMap>	
+	
+	<!-- 增加员工 -->
+	<insert id="add" parameterType="entity.Emp" >
+		insert into emps(eid,ename,esal,esex,img) values(#{eid},#{ename},#{esal},#{esex},#{img})
+	</insert>
+
+	<select id="getAll" resultType="entity.Emp">
+		SELECT * FROM emps
+	</select>
+
+	<select id="findById" parameterType="string" resultType="entity.Emp">
+		SELECT * FROM emps WHERE eid = #{eid}
+	</select>
+	<update id="update" parameterType="entity.Emp">
+		UPDATE emps SET ename=#{name},esal=#{sal},esex=#{esex} where eid =#{eid}
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
