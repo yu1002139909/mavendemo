@@ -79,6 +79,7 @@ body {
 			</div>
 			<table>
 				<thead>
+				    <th>编号</th>
 					<th>姓名</th>
 					<th>系统账号</th>
 					<th>部门</th>
@@ -94,6 +95,7 @@ body {
 						<c:when test="${not empty requestScope.userlist}">
 							<c:forEach var="user" items="${requestScope.userlist}">
 								<tr>
+									<td class="tdline">${user.id}</td>
 									<td class="tdline">${user.namne}</td>
 									<td class="tdline">${user.account}</td>
 									<td class="tdline">
@@ -131,13 +133,22 @@ body {
 	<div class="msdn">
 					<tr>
   			<td colspan="3" align="center">
-  				当前${requestScope.pageBean.currentPage }/${requestScope.pageBean.totalPage }页     &nbsp;&nbsp;
-  				
-  				<a href="${pageContext.request.contextPath }/studentservlet?method=stupage&currentPage=1">首页</a>
-  				<a href="${pageContext.request.contextPath }/studentservlet?method=stupage&currentPage=${requestScope.pageBean.currentPage-1}">上一页 </a>
-  				<a href="${pageContext.request.contextPath }/studentservlet?method=stupage&currentPage=${requestScope.pageBean.currentPage+1}">下一页 </a>
+                当前第<c:choose>
+
+				<c:when test="${requestScope.start==0}">
+					${requestScope.start+1}页   &nbsp;&nbsp;
+				</c:when>
+
+				<c:otherwise>
+					${requestScope.start}页   &nbsp;&nbsp;
+				</c:otherwise>
+			</c:choose>
+
+  				<a href="${pageContext.request.contextPath }/userlist.action?start=0">首页</a>
+  				<a href="${pageContext.request.contextPath }/userlist.action?start=${requestScope.start-1}">上一页 </a>
+  				<a href="${pageContext.request.contextPath }/userlist.action?start=${requestScope.start+1}">下一页 </a>
   			</td>
-  			   <td>  共有${requestScope.pageBean.totalCount}条数据</td>
+  			   <td>  共有${requestScope.allcount}条数据</td>
   		</tr>
 	</div>
 	        <form action="${pageContext.request.contextPath}/studentservlet?method=addstuview" method="post"">

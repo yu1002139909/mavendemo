@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import service.UserService;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author qq_emial1002139909@qq.com
@@ -53,5 +54,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public void update(User admin) throws Exception {
 
+    }
+
+    @Override
+    public List<User> pageDate(Map<String,Integer> map) {
+         return userMapper.pageDate(map);
+    }
+
+    @Override
+    public Integer allCount() {
+        return userMapper.countByExample(userExample);
     }
 }

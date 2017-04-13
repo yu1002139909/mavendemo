@@ -22,8 +22,8 @@ if("doctor".equals(userType)){
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>学生管理系统首页</title>
-<link href="images/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="javascript/jquery.min.js"></script>
+<link href="${pageContext.request.contextPath}/images/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/javascript/jquery.min.js"></script>
 <script type="text/javascript">
 $(function(){
 	//setMenuHeight

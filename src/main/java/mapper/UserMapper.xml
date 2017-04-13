@@ -184,6 +184,9 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
+  <select id="pageDate" resultType="entity.User" parameterType="map">
+      select * from user limit #{pstart},#{size}
+  </select>
   <update id="updateByExampleSelective" parameterType="map">
     update user
     <set>
