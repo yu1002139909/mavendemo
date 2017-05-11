@@ -60,7 +60,7 @@ $(function(){
     <div class="logo fleft">
     <img src="" style="height:60px;margin-left:20px"/>
 	</div>
-    <a class="logout fright" href="login.jsp" alt="注销退出"> </a>
+    <a class="logout fright" href="${pageContext.request.contextPath}/logout.action" alt="注销退出"> </a>
     
     <div class="clear"></div>
     <div class="subnav">

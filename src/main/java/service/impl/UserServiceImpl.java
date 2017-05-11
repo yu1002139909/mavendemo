@@ -3,6 +3,7 @@ package service.impl;
 import entity.User;
 import mapper.UserExample;
 import mapper.UserMapper;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import service.UserService;
 
@@ -45,7 +46,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getAll() throws Exception {
+    public List<User> getAll( RowBounds rowBounds) throws Exception {
         UserExample.Criteria criteria = userExample.createCriteria();
         criteria.andIdIsNotNull();
         return userMapper.selectByExample(userExample);

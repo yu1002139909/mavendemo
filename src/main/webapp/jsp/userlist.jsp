@@ -93,7 +93,7 @@ body {
 				<tbody>
 					<c:choose>
 						<c:when test="${not empty requestScope.userlist}">
-							<c:forEach var="user" items="${requestScope.userlist}">
+							<c:forEach var="user" items="${requestScope.userlist}" >
 								<tr>
 									<td class="tdline">${user.id}</td>
 									<td class="tdline">${user.namne}</td>

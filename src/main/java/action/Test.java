@@ -64,10 +64,6 @@ public class Test {
         model.addAttribute("list",list);
         return "list";
     }
-    @RequestMapping(value = "login.action")
-    public String Login(){
-        return  "";
-    }
     /*
     修改员工信息
      */

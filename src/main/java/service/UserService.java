@@ -2,6 +2,7 @@ package service;
 
 
 import entity.User;
+import org.apache.ibatis.session.RowBounds;
 
 import java.util.List;
 import java.util.Map;
@@ -14,7 +15,7 @@ public interface UserService {
     public void add(User user) throws Exception;
     public void delete(Integer id) throws Exception;
     public List<User> findById(Integer id) throws Exception;
-    public List<User> getAll() throws Exception;
+    public List<User> getAll(RowBounds bounds) throws Exception;
     public void update(User admin) throws Exception;
     public List<User> pageDate(Map<String,Integer> map);
     public Integer allCount();

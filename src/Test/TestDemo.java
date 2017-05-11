@@ -9,7 +9,6 @@ import service.UserService;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 /**
  * @Author qq_emial1002139909@qq.com
@@ -47,24 +46,19 @@ public class TestDemo {
            service.add(user);
        }
   }
-  @Test
-  public void getAll() throws  Exception{
-      List<User> all = service.getAll();
-      System.out.println(all.size());
-  }
     @Test
     public void delete()throws Exception{
        service.delete(1);
     }
     @Test
     public void findByid()throws Exception{
-        List<User> byId = service.getAll();
-        for (User user:byId){
-             Date date = user.getBirthday();
-           SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日");
-           String format = simpleDateFormat.format(date);
-           System.out.println(format);
-
-        }
+//        List<User> byId = service.getAll();
+//        for (User user:byId){
+//             Date date = user.getBirthday();
+//           SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日");
+//           String format = simpleDateFormat.format(date);
+//           System.out.println(format);
+//
+//        }
     }
 }

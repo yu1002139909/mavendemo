@@ -35,10 +35,10 @@ public class UserAction {
         map.put("pstart",start);
         map.put("size",10);
         List<User> userlist = userService.pageDate(map);
-        model.addAttribute("userlist",userlist);
-        Integer allCount = userService.allCount();
-        model.addAttribute("allcount",allCount);
-        model.addAttribute("start",start);
-        return "userlist";
+       model.addAttribute("userlist",userlist);
+       Integer allCount = userService.allCount();
+       model.addAttribute("allcount",allCount);
+       model.addAttribute("start",start);
+       return "userlist";
     }
 }

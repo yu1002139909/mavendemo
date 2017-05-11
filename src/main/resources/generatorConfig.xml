@@ -12,7 +12,7 @@
         <!--mysql数据库连接的信息：驱动类、连接地址、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://127.0.0.1:3306/ssmdemo" userId="root"
-                        password="">
+                        password="root">
         </jdbcConnection>
 
         <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，
@@ -44,6 +44,9 @@
 
         <!-- 指定数据库表，要生成哪些表，就写哪些表，要和数据库中对应，不能写错！ -->
 
-        <table tableName="xx"></table>
+        <table tableName="course"></table>
+        <table tableName="grade"></table>
+        <table tableName="major"></table>
+        <table tableName="student"></table>
     </context>
 </generatorConfiguration>

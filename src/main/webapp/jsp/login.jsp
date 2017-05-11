@@ -21,13 +21,13 @@
             <div style="height:150px;"></div>
             <div class="media media-y margin-big-bottom">           
             </div>         
-            <form action="${pageContext.request.contextPath}/userlist.action" method="post">
+            <form action="${pageContext.request.contextPath}/adminlogin.action" method="post">
             <div class="panel loginbox">
-                <div class="text-center margin-big padding-big-top"><h1>选课系统管理</h1></div>
+                <div class="text-center margin-big padding-big-top"><h1>员工系统管理</h1></div>
                 <div class="panel-body" style="padding:30px; padding-bottom:10px; padding-top:10px;">
                     <div class="form-group">
                         <div class="field field-icon-right">
-                            <input type="text" class="input input-big" name="name"  id="username" placeholder="登录账号·" data-validate="required:请填写账号" />
+                            <input type="text" class="input input-big" name="username"  id="username" placeholder="登录账号·" data-validate="required:请填写账号" />
                             <span class="icon icon-user margin-small"></span>
                         </div>
                     </div>
